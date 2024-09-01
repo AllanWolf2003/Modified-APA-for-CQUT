@@ -22,7 +22,7 @@
     <category citation-format="author-date"/>
     <category field="psychology"/>
     <category field="generic-base"/>
-    <updated>2024-08-29</updated>
+    <updated>2024-09-01</updated>
     <rights license="https://creativecommons.org/publicdomain/zero/1.0/">This work is licensed under a Creative Commons Zero 1.0 Universal License</rights>
 </info>
 
@@ -72,6 +72,7 @@
         <single>issue</single>
         <multiple>issues</multiple>
       </term>
+      <term name="original-work-published">original work published</term>
     </terms>
   </locale>
 
@@ -379,7 +380,7 @@
     <term name="no-publisher" form="short">n.p.</term>
     <term name="on">on</term>
     <term name="op-cit">op. cit.</term> <!-- like ibid., the abbreviated form is the regular form  -->
-    <term name="original-work-published">original work published</term>
+    <term name="original-work-published">原著出版于</term>
     <term name="personal-communication">私人通讯</term>
     <term name="podcast">podcast</term>
     <term name="podcast-episode">podcast episode</term>
@@ -572,15 +573,15 @@
     <term name="book">册</term>
     <term name="chapter">chapter</term>
     <term name="column">栏</term>
-    <term name="figure">图表</term>       
+    <term name="figure">figure</term>       
     <term name="folio">版</term>
     <term name="issue">期</term>
     <term name="line">行</term>
-    <term name="note">注脚</term>
+    <term name="note">footnote</term>
     <term name="opus">作品</term>      
     <term name="page">页</term>
     <term name="number-of-pages">总页数</term>      
-    <term name="paragraph">段落</term>
+    <term name="paragraph">paragraph</term>
     <term name="part">部分</term>     
     <term name="section">节</term>         
     <term name="sub-verbo">另见</term>    
@@ -625,7 +626,7 @@
       <multiple>tits.</multiple>
     </term>
     <term name="book" form="short">册</term>
-    <term name="chapter" form="short">章</term>
+    <term name="chapter" form="short">ch.</term>
     <term name="column" form="short">栏</term>
     <term name="figure" form="short">图</term>
     <term name="issue" form="short">期</term>
@@ -634,7 +635,10 @@
     <term name="opus" form="short">op.</term>
     <term name="page" form="short">页</term>   
     <term name="number-of-pages" form="short">共</term>    
-    <term name="paragraph" form="short">段</term>
+    <term name="paragraph" form="short">
+      <single>para.</single>
+      <multiple>paras.</multiple>
+    </term>
     <term name="part" form="short">部</term>
     <term name="section" form="short">节</term>
     <term name="sub-verbo" form="short">另见</term>   
@@ -1436,7 +1440,7 @@
   </macro>
 
   <macro name="reviewed-title-zh">
-    <group font-style="italic">
+    <group>
       <choose>
         <if variable="reviewed-title">
           <!-- Not possible to distinguish TV series episode from other reviewed
@@ -1478,7 +1482,7 @@
   </macro>
 
   <macro name="reviewed-title-intext-zh">
-    <group  font-style="italic" text-case="title">
+    <group text-case="title">
       <choose>
         <if variable="reviewed-title">
           <!-- Not possible to distinguish TV series episode from other reviewed works [Ex. 69] -->
@@ -1675,7 +1679,7 @@
           <names variable="container-author"/>
         </substitute>
       </names>
-      <group delimiter="：" font-style="italic">
+      <group delimiter="：">
         <text variable="container-title"/>
         <!-- Replace with volume-title as that becomes available -->
         <choose>
@@ -1781,20 +1785,20 @@
 
   <macro name="container-periodical-group-group-zh">
     <group delimiter="，">
-      <group font-style="italic" text-case="title">
+      <group text-case="title">
         <text variable="container-title"/>
       </group>
       <choose>
         <if variable="volume">
           <group>
-            <group font-style="italic">
+            <group>
               <text variable="volume"/>
             </group>
             <text variable="issue" prefix="（" suffix="）"/>
           </group>
         </if>
         <else>
-          <group font-style="italic">
+          <group>
             <text variable="issue"/>
           </group>
         </else>
@@ -1839,12 +1843,13 @@
   </macro>
 
   <macro name="publisher-en">
+    <text variable="publisher-place" text-case="title" suffix=": "/> <!-- 添加出版社地址-->
     <group delimiter="; ">
       <text macro="publisher-group-choose" />
       <text macro="publisher-group-group" />
     </group>
     <choose> <!-- 在出版社后显示析出文献页码-->
-      <if variable="container-title">
+      <if type="chapter paper-conference" match="any">
         <group delimiter=" " prefix=" (" suffix=")">
           <label variable="page" form="short" suffix=" "/>
           <text variable="page"/>
@@ -1856,12 +1861,13 @@
   </macro>
 
   <macro name="publisher-zh">
+    <text variable="publisher-place" suffix="："/> <!-- 添加出版社地址-->
     <group delimiter="；">
       <text macro="publisher-group-choose" />
       <text macro="publisher-group-group" />
     </group>
     <choose> <!-- 在出版社后显示析出文献页码-->
-      <if variable="container-title">
+      <if type="chapter paper-conference" match="any">
         <group delimiter="" prefix="（" suffix="）">
           <text variable="page" suffix="页"/>
         </group>
@@ -2113,7 +2119,7 @@
             </if>
             <else>
               <group delimiter=" ">
-                <text term="original-work-published" text-case="capitalize-first"/>
+                <text term="original-work-published" text-case="capitalize-first" suffix=" "/>
                 <choose>
                   <if is-uncertain-date="original-date">
                     <text term="circa" form="short"/>
@@ -2147,14 +2153,14 @@
             </if>
             <else>
               <group delimiter="">
-                <text term="original-work-published" text-case="capitalize-first"/>
+                <text term="original-work-published"/>
                 <choose>
                   <if is-uncertain-date="original-date">
                     <text term="circa" form="short"/>
                   </if>
                 </choose>
                 <date variable="original-date">
-                  <date-part name="year"/>
+                  <date-part name="year" suffix="年"/>
                 </date>
               </group>
             </else>
@@ -2607,7 +2613,7 @@
         <choose>
           <if variable="number container-title" match="none">
             <!-- If no number or container-title, then assume it is a hearing -->
-            <text variable="title" font-style="italic"/>
+            <text variable="title"/>
           </if>
           <else>
             <text variable="title"/>
@@ -2796,8 +2802,14 @@
           <text variable="locator" prefix=": "/>
         </if>
         <else>
-          <label variable="locator" text-case="capitalize-first"/>
-          <text variable="locator"/>
+          <if locator="paragraph">
+            <label variable="locator" form="short" text-case="capitalize-first" />
+            <text variable="locator"/>
+          </if>
+          <else>
+            <label variable="locator"  text-case="capitalize-first" />
+            <text variable="locator"/>
+          </else>
         </else>
       </choose>
     </group>
@@ -2810,8 +2822,14 @@
           <text variable="locator" prefix=": "/>
         </if>
         <else>
-          <label variable="locator" text-case="capitalize-first"/>
-          <text variable="locator"/>
+          <if locator="paragraph">
+            <label variable="locator" form="short" text-case="capitalize-first" />
+            <text variable="locator"/>
+          </if>
+          <else>
+            <label variable="locator"  text-case="capitalize-first" />
+            <text variable="locator"/>
+          </else>
         </else>
       </choose>
     </group>
@@ -3127,8 +3145,7 @@
   <macro name="title-zh">
     <choose>
       <if type="post webpage" match="any">
-        <!-- Webpages are always italicized -->
-        <text macro="title-original-title" font-style="italic"/>
+        <text macro="title-original-title"/>
       </if>
       <else-if variable="container-title" match="any">
         <!-- Other types are italicized based on presence of container-title.
@@ -3139,12 +3156,12 @@
       <else>
         <choose>
           <if type="article-journal article-magazine article-newspaper post-weblog review review-book" match="any">
-            <text macro="title-original-title" font-style="italic"/>
+            <text macro="title-original-title"/>
           </if>
           <else-if type="paper-conference">
             <choose>
               <if variable="collection-editor editor editorial-director" match="any">
-                <group delimiter="：" font-style="italic">
+                <group delimiter="：">
                   <text macro="title-original-title"/>
                   <!-- Replace with volume-title as that becomes available -->
                   <choose>
@@ -3158,13 +3175,13 @@
                 </group>
               </if>
               <else>
-                <text macro="title-original-title" font-style="italic"/>
+                <text macro="title-original-title"/>
               </else>
             </choose>
             <text variable="status" prefix="〔" suffix="〕" />
           </else-if>
           <else>
-            <group delimiter="：" font-style="italic">
+            <group delimiter="：">
               <text macro="title-original-title"/>
               <!-- Replace with volume-title as that becomes available -->
               <choose>
@@ -3315,7 +3332,7 @@
         <!-- If a bill has no number or container-title, assume it is a hearing; italic -->
         <choose>
           <if variable="number container-title" match="none">
-            <group font-style="italic" text-case="title">
+            <group text-case="title">
               <text variable="title" form="short"/>
             </group>
           </if>
@@ -3340,7 +3357,7 @@
       </else-if>
       <else-if type="legal_case" match="any">
         <!-- Cases are italicized -->
-        <group font-style="italic">
+        <group >
           <text variable="title"/>
         </group>
       </else-if>
@@ -3350,7 +3367,7 @@
       </else-if>
       <else-if type="post webpage" match="any">
         <!-- Webpages are always italicized -->
-        <group font-style="italic" text-case="title">
+        <group text-case="title">
           <text variable="title" form="short"/>
         </group>
       </else-if>
@@ -3359,7 +3376,7 @@
         <text variable="title" form="short" quotes="true" text-case="title"/>
       </else-if>
       <else>
-        <group font-style="italic" text-case="title">
+        <group text-case="title">
           <text variable="title" form="short"/>
         </group>
       </else>
@@ -3467,7 +3484,7 @@
     <choose>
       <if type="post webpage" match="any">
         <!-- Webpages are always italicized -->
-        <text macro="title-original-title-sort" font-style="italic"/>
+        <text macro="title-original-title-sort"/>
       </if>
       <else-if variable="container-title" match="any">
         <!-- Other types are italicized based on presence of container-title.
@@ -3478,12 +3495,12 @@
       <else>
         <choose>
           <if type="article-journal article-magazine article-newspaper post-weblog review review-book" match="any">
-            <text macro="title-original-title-sort" font-style="italic"/>
+            <text macro="title-original-title-sort" />
           </if>
           <else-if type="paper-conference">
             <choose>
               <if variable="collection-editor editor editorial-director" match="any">
-                <group delimiter="：" font-style="italic">
+                <group delimiter="：" >
                   <text macro="title-original-title-sort"/>
                   <!-- Replace with volume-title as that becomes available -->
                   <choose>
@@ -3497,13 +3514,13 @@
                 </group>
               </if>
               <else>
-                <text macro="title-original-title-sort" font-style="italic"/>
+                <text macro="title-original-title-sort" />
               </else>
             </choose>
             <text variable="status" prefix="〔" suffix="〕" />
           </else-if>
           <else>
-            <group delimiter="：" font-style="italic">
+            <group delimiter="：" >
               <text macro="title-original-title-sort"/>
               <!-- Replace with volume-title as that becomes available -->
               <choose>
@@ -4837,13 +4854,13 @@
 
 <macro name="bibliography-layout-else-zh">
   <group delimiter="">
-    <group delimiter="，" suffix="。"> <!-- 中文文献中间用逗号隔开，仅末尾用句号-->
+    <group delimiter="，" suffix="。"> <!-- 中文文献中间用逗号隔开，仅出版社前和末尾用句号-->
       <text macro="author-date-bib"/>
       <text macro="title-and-descriptions"/>
       <text macro="container"/>
       <text macro="event"/>
-      <text macro="publisher"/>
     </group>
+    <text macro="publisher" suffix="。"/>
     <text macro="access"/>
     <text macro="publication-history"/>
   </group>
