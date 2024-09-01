@@ -411,7 +411,7 @@
     <term name="forthcoming">即将出版</term>
     <term name="from">从</term>
     <term name="ibid">同上</term>
-    <term name="in">收入</term>
+    <term name="in">载于</term>
     <term name="in press">印刷中</term>
     <term name="internet">互联网</term>
     <!-- <term name="letter">信函</term> -->
@@ -1004,8 +1004,9 @@
           </substitute>
         </names>
       </if>
+      <!-- 中文文献-->
       <else>
-        <names variable="composer" delimiter=", " prefix="[" suffix="]"> <!-- 为作者添加[]-->
+        <names variable="composer" delimiter=", " prefix="[" suffix="]"> <!-- 为中文作者的英文名添加[]-->
           <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with=". " delimiter=", " delimiter-precedes-last="always" />
           <substitute>
             <names variable="author"/>
@@ -1014,7 +1015,6 @@
               <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with=". " delimiter=", " delimiter-precedes-last="always"/>
               <label form="long" prefix=" (" suffix=")" text-case="title"/>
             </names>
-            
             <choose>
               <if variable="container-title">
                 <choose>
@@ -1843,6 +1843,16 @@
       <text macro="publisher-group-choose" />
       <text macro="publisher-group-group" />
     </group>
+    <choose> <!-- 在出版社后显示析出文献页码-->
+      <if variable="container-title">
+        <group delimiter=" " prefix=" (" suffix=")">
+          <label variable="page" form="short" suffix=" "/>
+          <text variable="page"/>
+        </group>
+      </if>
+    </choose>
+
+
   </macro>
 
   <macro name="publisher-zh">
@@ -1850,6 +1860,15 @@
       <text macro="publisher-group-choose" />
       <text macro="publisher-group-group" />
     </group>
+    <choose> <!-- 在出版社后显示析出文献页码-->
+      <if variable="container-title">
+        <group delimiter="" prefix="（" suffix="）">
+          <text variable="page" suffix="页"/>
+        </group>
+      </if>
+    </choose>
+
+
   </macro>
 
   <macro name="publisher">
@@ -2856,6 +2875,7 @@
   </macro>
 
   <macro name="date-bib-zh">
+    <text variable="note" suffix="，"/>
     <group delimiter=" " prefix="（" suffix="）">
       <choose>
         <if is-uncertain-date="issued">
@@ -4817,7 +4837,7 @@
 
 <macro name="bibliography-layout-else-zh">
   <group delimiter="">
-    <group delimiter="。" suffix="。">
+    <group delimiter="，" suffix="。"> <!-- 中文文献中间用逗号隔开，仅末尾用句号-->
       <text macro="author-date-bib"/>
       <text macro="title-and-descriptions"/>
       <text macro="container"/>
@@ -4877,10 +4897,12 @@
         <label variable="issue" text-case="capitalize-first"/>
         <text variable="issue"/>
       </group>
+      <!-- 文集后不显示章节页码
       <group delimiter=" ">
         <label variable="page" form="short" suffix=" "/>
         <text variable="page"/>
       </group>
+      -->
     </group>
   </macro>
 
@@ -4917,15 +4939,17 @@
           </group>
         </else>
       </choose>
+
       <group delimiter="">
         <label variable="issue" text-case="capitalize-first"/>
         <text variable="issue"/>
       </group>
-
+      <!-- 文集后不显示章节页码
       <group delimiter="">
         <label variable="page" form="short" suffix=" "/>
         <text variable="page"/>
       </group>
+      -->
     </group>
   </macro>
 
