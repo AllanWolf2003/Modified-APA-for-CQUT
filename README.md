@@ -10,7 +10,7 @@ apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl 
 # 适用的软件和平台
 CSL文件必须搭配支持Citation Style Language的文献管理软件才能发挥作用
 
-建议使用Zotero 7.0 or later, on Windows/MacOS/Linux
+建议使用Zotero7.0或更新版本, 可以运行在Windows/MacOS/Linux上
 
 理论上还可用于Mendeley等同样使用citeproc-js作为CSL解析器的文献管理软件
 
