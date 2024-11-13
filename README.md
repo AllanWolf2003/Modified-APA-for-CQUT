@@ -8,7 +8,7 @@ apa-7th-zh_Hant-TW.csl ( https://github.com/pulipulichen/Zotero-Style-apa-7th-zh
 apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl )
 
 # 适用的软件和平台
-建议使用Zotero7.0或更新版本, 可以运行在Windows/MacOS/Linux上
+建议使用[Zotero](https://www.zotero.org/)7.0或更新版本, 可以运行在Windows/MacOS/Linux上
 
 理论上还可用于Mendeley等同样使用citeproc-js作为CSL解析器的文献管理软件
 
