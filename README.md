@@ -1,5 +1,5 @@
 # Modified APA for CQUT
-此中英混排的CSL文件可用于自动生成符合重庆理工大学APA文献著录规范的文内引注和参考文献列表，适用于英语和商务英语专业“学术写作”课程论文和毕业论文（设计）。
+此中英混排的CSL文件可用于自动生成符合重庆理工大学APA文献著录规范的文内引注和参考文献列表，适用于英语、商务英语专业“学术写作”课程论文和毕业论文（设计）。
 
 基于以下文件修改而来：
 
@@ -8,17 +8,12 @@ apa-7th-zh_Hant-TW.csl ( https://github.com/pulipulichen/Zotero-Style-apa-7th-zh
 apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl )
 
 # 适用的软件和平台
-CSL文件必须搭配支持Citation Style Language的文献管理软件才能发挥作用
-
 建议使用Zotero7.0或更新版本, 可以运行在Windows/MacOS/Linux上
 
 理论上还可用于Mendeley等同样使用citeproc-js作为CSL解析器的文献管理软件
 
 # 使用指南
-[点击下载](https://share.weiyun.com/UhgE5XUt "腾讯微云") 密码：s88nvw
-
-# 已知问题
-对于电视节目的一期，当编剧和导演姓名相同时，无法合并标签。
+[点击下载](https://share.weiyun.com/mQSlD8R5 "腾讯微云") 密码：ekrkhz
 
 # 版权信息
 此CSL文件采用CC BY-SA 3.0协议发布，
