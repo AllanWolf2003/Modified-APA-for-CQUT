@@ -7,13 +7,13 @@ apa-7th-zh_Hant-TW.csl ( https://github.com/pulipulichen/Zotero-Style-apa-7th-zh
 
 apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl )
 
-# 适用的软件和平台
-建议使用[Zotero](https://www.zotero.org/)7.0或更新版本, 可以运行在Windows/MacOS/Linux上
+# 适用的软件
+建议使用 [Zotero](https://www.zotero.org/) 7.0 或更新版本
 
 理论上还可用于Mendeley等同样使用citeproc-js作为CSL解析器的文献管理软件
 
 # 使用指南
-[点击下载](https://share.weiyun.com/mQSlD8R5 "腾讯微云") 密码：ekrkhz
+[点击下载](https://share.weiyun.com/ZKUSZiF3 "腾讯微云") 密码：yrdryk
 
 # 版权信息
 此CSL文件采用CC BY-SA 3.0协议发布，
@@ -36,4 +36,5 @@ apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl 
 
 # 免责声明
   本人出于个人兴趣制作此CSL文件，发布在网络上只是为了学习、交流之目的，并且不对此CSL文件的可用性作任何担保，由于作者的代码水平有限，作品难免存在漏洞和缺陷，对于任何人因使用此CSL文件而受到的负面影响，本人概不负责！
+  
   下载本页面的csl文件即表示您同意上述免责声明！
