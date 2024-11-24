@@ -3,9 +3,9 @@
 
 基于以下文件修改而来：
 
-apa-7th-zh_Hant-TW.csl ( https://github.com/pulipulichen/Zotero-Style-apa-7th-zh-Hant-TW )
+apa-7th-zh_Hant-TW.csl ( https://github.com/pulipulichen/Zotero-Style-apa-7th-zh-Hant-TW ), by Pulipuli Chen
 
-apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl )
+apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl ), by Brenton M. Wiernik
 
 # 适用的软件
 建议使用 [Zotero](https://www.zotero.org/) 7.0 或更新版本
