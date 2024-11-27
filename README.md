@@ -16,7 +16,7 @@ apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl 
 [点击下载](https://share.weiyun.com/ZKUSZiF3 "腾讯微云") 密码：yrdryk
 
 # 版权信息
-此CSL文件采用CC BY-SA 3.0协议发布，
+此CSL文件使用CC BY-SA 3.0许可证，
 
 您可以自由地：
 
