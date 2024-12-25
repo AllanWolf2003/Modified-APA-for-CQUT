@@ -13,7 +13,7 @@ apa.csl ( https://github.com/citation-style-language/styles/blob/master/apa.csl 
 理论上还可用于Mendeley等同样使用citeproc-js作为CSL解析器的文献管理软件
 
 # 使用指南
-[点击下载](https://share.weiyun.com/ZKUSZiF3 "腾讯微云") 密码：yrdryk
+[点击下载](https://share.weiyun.com/Kzz1VJyf "腾讯微云") 密码：943iav
 
 # 许可证
 此CSL文件使用CC BY-SA 3.0许可证，
