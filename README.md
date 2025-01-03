@@ -1,6 +1,6 @@
 # Modified APA for CQUT
 
-为了便于访问，此仓库已转移至Gitee: https://gitee.com/allanwolf2003/modified-apa-for-cqut
+##### 为方便访问，此仓库已转移至Gitee: https://gitee.com/allanwolf2003/modified-apa-for-cqut
 
 此中英混排的CSL文件可用于自动生成符合重庆理工大学《APA学术论文参考书目写作规范》的文内引注和参考文献列表。
 
